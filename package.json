@@ -1,0 +1,25 @@
+{
+  "name": "account-form",
+  "version": "1.0.0",
+  "description": "Practicing Sign Up and Login Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AloysiusKang/Account-Form.git"
+  },
+  "author": "Aloysius Kang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AloysiusKang/Account-Form/issues"
+  },
+  "homepage": "https://github.com/AloysiusKang/Account-Form#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
