@@ -1,0 +1,168 @@
+:root {
+  /* Colour */
+  --clr-black: 0, 0%, 0%;
+  --clr-white: 0, 0%, 100%;
+  --clr-accent: 0, 0%, 30%;
+
+  /* Font Family */
+  --ff-inter: "Inter", sans-serif;
+
+  /* Font Size */
+  --fs-90: clamp(4rem, 3rem + 5vw, 5.625rem);
+  --fs-64: 4rem;
+  --fs-30: clamp(1.313rem, 0.5rem + 3vw, 1.875rem);
+  --fs-21: 1.313rem;
+  --fs-16: 1rem;
+
+  /* Font Weight */
+  --fw-700: 700;
+  --fw-500: 500;
+  --fw-400: 400;
+  --fw-300: 300;
+
+  /* Line Height */
+  --lh-150: 1.5;
+  --lh-120: 1.2;
+
+  /* Letter Spacing */
+  --ls-1: -2%;
+}
+
+/*#region CSS Reset*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*#endregion */
+
+/*#region Utility Class */
+.bg-white {
+  background-color: hsl(var(--clr-white));
+}
+.bg-black {
+  background-color: hsl(var(--clr-black));
+}
+.bg-accent {
+  background-color: hsl(var(--clr-accent));
+}
+
+.clr-white {
+  color: hsl(var(--clr-white));
+}
+.clr-black {
+  color: hsl(var(--clr-black));
+}
+.clr-accent {
+  color: hsl(var(--clr-accent));
+}
+
+.ls-1 {
+  letter-spacing: var(--ls-1);
+}
+.lh-120 {
+  line-height: var(--lh-120);
+}
+.lh-150 {
+  line-height: var(--lh-150);
+}
+
+.ff-inter {
+  font-family: var(--ff-inter);
+}
+
+.fw-700 {
+  font-weight: var(--fw-700);
+}
+.fw-500 {
+  font-weight: var(--fw-500);
+}
+.fw-400 {
+  font-weight: var(--fw-400);
+}
+.fw-300 {
+  font-weight: var(--fw-300);
+}
+
+.fs-90 {
+  font-size: var(--fs-90);
+}
+.fs-64 {
+  font-size: var(--fs-64);
+}
+.fs-30 {
+  font-size: var(--fs-30);
+}
+.fs-21 {
+  font-size: var(--fs-21);
+}
+.fs-16 {
+  font-size: var(--fs-16);
+}
+
+*[aria-hidden="true"] {
+  display: none !important;
+}
+
+/*#endregion */
+
+.btn {
+  display: block;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  border-radius: 100vmax;
+  transition: background-color 300ms ease-in-out;
+}
+.btn:hover,
+.btn:focus{
+  background-color: hsl(var(--clr-accent));
+}
+
+body {
+  font-family: var(--ff-inter);
+  background-color: hsl(var(--clr-white));
+  color: hsl(var(--clr-black));
+  font-size: var(--fs-16);
+}
