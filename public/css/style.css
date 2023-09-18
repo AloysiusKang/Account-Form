@@ -153,10 +153,11 @@ body {
   text-decoration: none;
   padding: 1rem 3rem;
   border-radius: 100vmax;
+  border: none;
   transition: background-color 300ms ease-in-out;
 }
 .btn:hover,
-.btn:focus{
+.btn:focus {
   background-color: hsl(var(--clr-accent));
 }
 
@@ -165,4 +166,28 @@ body {
   background-color: hsl(var(--clr-white));
   color: hsl(var(--clr-black));
   font-size: var(--fs-16);
+}
+
+.title {
+  text-align: center;
+  padding: 4rem 1rem 0rem;
+}
+
+.form {
+  margin-inline: auto;
+  max-width: 750px;
+  padding: 2rem 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form__wrapper > input {
+  border-color: hsl(var(--clr-black));
+  border-radius: 100vmax;
+  border-style: solid;
+  padding: 0.5rem 1rem;
 }

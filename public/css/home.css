@@ -1,8 +1,3 @@
-.title {
-  text-align: center;
-  padding: 4rem 1rem 0rem;
-}
-
 .content {
   max-width: 600px;
   text-align: center;
@@ -36,8 +31,8 @@
   text-align: center;
 }
 
-@media(min-width: 900px){
-  .account{
+@media (min-width: 900px) {
+  .account {
     flex-direction: row;
   }
 }
