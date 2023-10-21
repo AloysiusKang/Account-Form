@@ -1,8 +1,9 @@
+require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://aloysiuskang:aloy123@account-form.k8it3a2.mongodb.net/account-form?retryWrites=true&w=majority");
+mongoose.connect(process.env.DB);
 
 const main = require("./router/main")
 
