@@ -2,13 +2,9 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+mongoose.connect("mongodb+srv://aloysiuskang:aloy123@account-form.k8it3a2.mongodb.net/account-form?retryWrites=true&w=majority");
 
-const UserController = require("./userController");
-const { error } = require("console");
-
-const database = "account-form";
-
-mongoose.connect(`mongodb+srv://aloysiuskang:aloy123@${database}.k8it3a2.mongodb.net/?retryWrites=true&w=majority`);
+const main = require("./router/main")
 
 // PORT
 const PORT = process.env.PORT || 3000;
@@ -21,31 +17,7 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-
-app.get("/", (req, res) => {
-    res.render("home", {
-        url: {
-            login: "/login",
-            signup: "/signup"
-        }
-    })
-})
-
-app.get("/login", (req, res) => {
-    res.render("login")
-})
-
-app.get("/signup", UserController.Run, (req, res) => {
-    res.render("sign-up")
-})
-app.post("/signup", UserController.Run, (req, res) => {
-    if(res.locals.error.created){
-        res.redirect("/");
-    }
-    else{
-        res.render("sign-up")
-   }
-})
+app.use("/", main)  
 
 
 app.listen(PORT, () => console.log(`Server launched at port ${PORT}`));
