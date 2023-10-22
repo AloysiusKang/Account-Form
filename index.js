@@ -15,6 +15,16 @@ app.use(express.static(path.join(__dirname, "Assets")));
 
 app.set('view engine', 'ejs');
 
+// Sessions
+app.use(session({
+    secret: 'SecretOne',
+    name: "authorized",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}))
+
+
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 

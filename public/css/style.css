@@ -191,3 +191,11 @@ body {
   border-style: solid;
   padding: 0.5rem 1rem;
 }
+.form__link{
+  color: inherit;
+  opacity: 50%;
+}
+
+.error-label{
+  color: red;
+}

@@ -19,20 +19,30 @@
         <h1 class="fs-90 fw-700 lh-120 ls-1">Home Page</h1>
         <h2 class="fs-30 fw-500 lh-120 ls-1">A random website for you!</h2>
     </div>
-    <div class="content" aria-hidden="true">
-        <h3 class="fs-21 fw-500 lh-120 ls-1">Account Form website</h3>
-        <p class="fw-300 lh-150">This website is just to test if I can do a simple account making form. From sign in and sign up and also trying to detect if the account is logged in or not. If logged in then go to this exact page. If you read this why but thanks.</p>
-    </div>
-    <div class="account" aria-hidden="false">
-        <div class="account__wrapper">
-            <h3 class="fs-21 fw-500 lh-120 ls-1">New member? Sign Up now!</h3>
-            <a href="/sign-up" class="btn bg-black clr-white fs-21 fw-700 lh-120 ls-1">Sign Up</a>
+    <% if (authorized) { %>
+        <div class="content">
+            <h3 class="fs-21 fw-500 lh-120 ls-1">Account Form website</h3>
+            <p class="fw-300 lh-150">This website is just to test if I can do a simple account making form. From sign in and sign up and also trying to detect if the account is logged in or not. If logged in then go to this exact page. If you read this why but thanks.</p>
         </div>
-        <div class="account__wrapper">
-            <h3 class="fs-21 fw-500 lh-120 ls-1">Login with existing account</h3>
-            <a href="/login" class="btn bg-black clr-white fs-21 fw-700 lh-120 ls-1">Login</a>
+        <div class="account">
+            <div class="account__wrapper">
+                <h3 class="fs-21 fw-500 lh-120 ls-1">Click the button to log out from account</h3>
+                <a href="/logout" class="btn bg-black clr-white fs-21 fw-700 lh-120 ls-1">Log Out</a>
+            </div>
         </div>
-    </div>
+    <% } %>
+    <% if (!authorized) { %>
+        <div class="account">
+            <div class="account__wrapper">
+                <h3 class="fs-21 fw-500 lh-120 ls-1">New member? Sign Up now!</h3>
+                <a href="/sign-up" class="btn bg-black clr-white fs-21 fw-700 lh-120 ls-1">Sign Up</a>
+            </div>
+            <div class="account__wrapper">
+                <h3 class="fs-21 fw-500 lh-120 ls-1">Login with existing account</h3>
+                <a href="/login" class="btn bg-black clr-white fs-21 fw-700 lh-120 ls-1">Login</a>
+            </div>
+        </div>
+    <% } %>
     <img src="random-image.jpg" alt="An image of a salad" class="home-img">
 </body>
 </html>

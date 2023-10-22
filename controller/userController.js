@@ -113,6 +113,7 @@ exports.loginPost = [
     },
 
     (req, res) => {
-        res.redirect("/")
+        req.session.authorized = true;
+        res.redirect("/");
     }
 ]

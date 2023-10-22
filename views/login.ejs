@@ -28,6 +28,7 @@
             <label class="fs-16 fw-300 lh-150" for="password">Password:</label>
             <input class="fs-16 fw-300 lh-150" type="password" name="password" placeholder="Insert password here...">
         </div>
+        <p>Haven't made an account? <a href="/sign-up" class="form__link">Sign up here</a></p>
         <p class="error-label">
             <% if (error == null) { %>
              
@@ -35,6 +36,7 @@
                 <%= error %>
              <% } %>
         </p>
+
         <input class="btn bg-black clr-white fs-21 fw-700 lh-120 ls-1" type="submit" value="Submit">
     </form>
 </body>
