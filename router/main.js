@@ -6,11 +6,10 @@ router.get("/", (req, res) => {
     res.render("home");
 })
 
-router.get("/sign-up", userController.signUpGet)
+router.get("/sign-up", userController.signUpGet);
 router.post("/sign-up", userController.signUpPost);
 
-router.get("/login", (req, res) => {
-    res.render("login");
-})
+router.get("/login", userController.loginGet);
+router.post("/login", userController.loginPost);
 
 module.exports = router

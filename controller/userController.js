@@ -8,13 +8,24 @@ exports.signUpGet = (req, res) => {
 }
 
 exports.signUpPost = [
-    (req, res, next) => {
-        if(req.body.username.length < 5){
-            res.render("sign-up", {
-                error: "Username length is too short"
-            })
+    async (req, res, next) => {
+        try {
+            if(req.body.username.length < 5){
+                res.render("sign-up", {
+                    error: "Username length is too short"
+                })
+                return;
+            } else if(await User.findOne({username: req.body.username})){
+                res.render("sign-up", {
+                    error: "Username has been taken"
+                })
+                return;
+            }
+            next();
+        } catch (err) {
+            console.log(err);
+            next();
         }
-        next();
     },
 
     (req, res, next) => {
@@ -53,3 +64,55 @@ exports.signUpPost = [
         console.log(err);
     }
 }]
+
+exports.loginGet = (req, res) => {
+    res.render("login", {
+        error: null
+    })
+}
+
+exports.loginPost = [
+    async (req, res, next) => {
+        try {
+            if(req.body.username.length < 5){
+                res.render("login", {
+                    error: "Username length is too short"
+                })
+                return;
+            } else if(!await User.findOne({username: req.body.username})){
+                res.render("login", {
+                    error: "Username is not found"
+                })
+                return;
+            }
+            next();
+        } catch (err) {
+            console.log(err);
+            next();
+        }
+    },
+
+    async (req, res, next) => {
+        try {
+            let username =  req.body.username;
+            let password = req.body.password;
+            if(password.length < 5){
+                res.render("login", {
+                    error: "Password length is too short"
+                })
+            } else if(!await User.findOne({$and: [{username: username}, {password: password}]})) {
+                res.render("login",{
+                    error: "Password is incorrect"
+                })
+            }
+            next();
+        } catch (err) {
+            console.log(err);
+            next();
+        }
+    },
+
+    (req, res) => {
+        res.redirect("/")
+    }
+]

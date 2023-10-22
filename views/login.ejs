@@ -21,14 +21,21 @@
 
     <form class="form" action="" method="post">
         <div class="form__wrapper">
-            <label class="fs-16 fw-300 lh-150" for="name">Name:</label>
-            <input class="fs-16 fw-300 lh-150" type="text" name="name" placeholder="Insert name here...">
+            <label class="fs-16 fw-300 lh-150" for="username">Name:</label>
+            <input class="fs-16 fw-300 lh-150" type="text" name="username" placeholder="Insert name here...">
         </div>
         <div class="form__wrapper">
             <label class="fs-16 fw-300 lh-150" for="password">Password:</label>
             <input class="fs-16 fw-300 lh-150" type="password" name="password" placeholder="Insert password here...">
         </div>
-        <input class="btn bg-black clr-white fs-21 fw-700 lh-120 ls-1" type="button" value="Submit">
+        <p class="error-label">
+            <% if (error == null) { %>
+             
+            <% } else { %>
+                <%= error %>
+             <% } %>
+        </p>
+        <input class="btn bg-black clr-white fs-21 fw-700 lh-120 ls-1" type="submit" value="Submit">
     </form>
 </body>
 </html>
